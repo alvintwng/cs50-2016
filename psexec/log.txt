@@ -1,0 +1,67 @@
+20161028
+~/workspace/ $ unzip pset8
+
+~/workspace/psexec/ $ chmod 711 includes
+~/workspace/psexec/ $ chmod 711 vendor
+~/workspace/psexec/ $ chmod 711 vendor/library50-php-5
+~/workspace/psexec/ $ chmod 711 vendor/library50-php-5/CS50
+~/workspace/psexec/ $ chmod 711 public
+~/workspace/psexec/ $ chmod 711 public/css
+~/workspace/psexec/ $ chmod 711 public/fonts
+~/workspace/psexec/ $ chmod 711 public/img
+~/workspace/psexec/ $ chmod 711 public/js
+~/workspace/psexec/ $ chmod 640 *.*
+~/workspace/psexec/ $ chmod 640 includes/*.*
+~/workspace/psexec/ $ chmod 640 vendor/library50-php-5/CS50/*.*
+~/workspace/psexec/ $ chmod 640 public/*.*
+~/workspace/psexec/ $ chmod 640 public/css/*.*
+~/workspace/psexec/ $ chmod 640 public/fonts/*.*
+~/workspace/psexec/ $ chmod 640 public/img/*.*
+~/workspace/psexec/ $ chmod 640 public/js/*.*
+
+********* to up server & sql *
+killall -9 server
+~/workspace/ $ update50
+~/workspace/psexec/public/ $ apache50 stop
+~/workspace/psexec/public/ $ apache50 start ~/workspace/psexec/public
+~/workspace/psexec/public/ $ mysql50 start
+https://ide50-twng.cs50.io/phpmyadmin
+v1kCjsvLYytrBTGV
+https://ide50-username.cs50.io/
+**********
+
+** directories: check from ./public/index.php
+
+* reference from cs50 example
+https://mashup.cs50.net/
+https://finance.cs50.net/ skoob 12345
+Console.log in scripts.js
+  See https://developer.mozilla.org/en-US/docs/Web/API/Console.log for tips
+
+phpMyAdmin - to index: click on structure unqiue to FULLTEXT, then index 4 columns
+Yes!, after amend Myindex to FULLTEXT.
+tested ok: https://ide50-twng.cs50.io/search.php?geo=Trilinq
+
+scripts.js
+center: {lat: 1.35, lng: 103.85}, // Singapore
+changed to "zoom: 12," was "zoom: 13"
+
+GET https://ide50-twng.cs50.io/js/markerwithlabel_packed.js 
+
+to gather postal code
+http://www.singpost.com/find-postal-code
+
+to gather coordinate
+http://www.mapcoordinates.net/en
+
+backup:
+~/workspace/psexec/ $ mysqldump -u twng -p psexec > psexec.sql
+password: v1kCjsvLYytrBTGV
+
+Submiting to edx
+Upload to YouTube: https://youtu.be/fRVdOQHeC7Q
+
+To refresh the javascript use in index.php;
+  <script>
+  window.stop();
+  </script>

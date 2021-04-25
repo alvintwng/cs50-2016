@@ -1,0 +1,120 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ *
+ * Global CSS.
+ */
+ 
+/* added by Ng */
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #mapA {
+    height: 100%;
+  }
+
+/* allow map to fill viewport */
+html, body, #map-canvas, #map-pano, .container-fluid
+{
+    background-image: url("../img/background.PNG");
+    
+    /* height of these elements ** important for map*/
+    height: 100%;
+
+    /* no margin around these elements */
+    margin: 0;
+
+    /* disable scrollbars 
+    overflow: hidden;*/
+    overflow: auto;
+
+    /* no padding within these elements */
+    padding: 0;
+}
+
+/* stylize typeahead.js a la http://twitter.github.io/typeahead.js/css/examples.css */
+.tt-dropdown-menu
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 6px 12px;
+    width: 300px;
+}
+.tt-suggestion.tt-cursor {
+    background-color: #0097cf;
+    color: #fff;
+    cursor: pointer;
+}
+.tt-suggestion p {
+    margin: 0;
+}
+
+/* below new added by Ng */
+#top
+{
+    /* surround with whitespace */
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#top .nav
+{
+    /* center navigation pills */
+    display: inline-block;
+}
+
+#middle .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+#bottom
+{
+    /* shrink bottom's font size */
+    font-size: smaller;
+
+    /* surround with whitespace */
+    margin: 20px;
+}
+
+/* stylize places' labels */
+.label
+{
+    /* small, black text */
+    color: #000000;
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+
+    /* don't let places' labels wrap onto multiple lines */
+    white-space: nowrap;
+}
+
+/* stylize info window */
+#info
+{
+    /* no margin around this element */
+    margin: 0;
+
+    /* should be at least this width */
+    min-width: 200px;
+
+    /* allow scrollbars as needed */
+    overflow: auto;
+}

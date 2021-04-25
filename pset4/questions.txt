@@ -1,0 +1,44 @@
+0.  TBMP: 32bits color; 
+    GIF: 8 bits color; 
+    JPEG: 24 bits color; 
+    PNG: 24 bits color
+1.  TGIF
+
+2.  lossless compression: original file remain if uncompress. 
+    Lossy compression: where create the higher degree of approximate coarser images, as more details are removed.
+
+3.  JPEG
+
+4.  When file is deleted, the operating system modifies the filename's first character in the file's directories entry to shown that the file has been deleted, and the system set the file FAT cluster to free.
+
+5.  Totally overwriting the data with other date, such as with ASCII NUL so that the original data cannot be removed or used.
+
+6.  stdint.h is a header file to allow to write more portable code by providing a set of typedefs that specify integer type togather with the new define type of integer to be use.
+
+7.  uint8_t, uint32_t, int32_t, and uint16_t in a program are to define, or typedef the unsigned integer or signed integer of specific range value to BYTE, DWORD, LONG, and WORD.
+
+8.  BYTE has 1 bytes; 
+    DWORD has 4 bytes; 
+    LONG has 4 bytes; 
+    WORD has 2 bytes
+
+9.  BM, 66,77, or 0x42,0x4D
+
+10. bfSize: Size in BYTES of the file, define in BITMAPFILEHEADER;
+    biSize: Size of rest of header, set to be 40, define in BITMAPINFOHEADER.
+
+11. biHeight is value of the height of the bitmap, in pixels. Since is negative, the bitmap is a top-down DIB with the origin at the upper left corner.
+
+12. biBitCount
+
+13. Non existing file, or no such file found
+
+14. The third argument is how many element to read or write. That is, for 1 full array of data, for instance small.bmp, will be 1 read pass.
+
+15. 3 bytes of 0x00
+
+16. int fseek(FILE *stream, long offset, int origin). It set the file position indicator to the current file position.
+
+17. SEEK_CUR is an integer which may be passed to the fseek() function to request positioning relative to the current file position.
+
+18. Mr. Boddy’s photo 
