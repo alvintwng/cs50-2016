@@ -16,3 +16,14 @@ At the initial, 'int c = fgetc(fp)', it set c as interger, than to get bytes fro
 8.  Loaded dictionary at 0.66sec, and spell-checked holme.txt at 9.0 sec.
 9.  After changed the sequence of link nodes; increased the hash value; removed functions that were redundant; reduced memory leak; and changed hash formula. Now the 'loaded dictionary time' is at  0.04sec, and 'spell-checked' holme.txt at 0.94 sec, which is 10 times faster!
 10. On the software, the bottlenecks will be unable to use ‘binary search’ the sequence of link-list nodes for spell-checking. The hardware depend on the speed of computer, as well as the interface between CS50 IDE environment and local computer, especially when transferring data via the fgetc, or fscanf words from external data files.
+
+
+terminal
+``` console
+antw@Mac-mini challenge_2019 % make
+make: `speller' is up to date.
+antw@Mac-mini challenge_2019 % ls -la spe*
+-rwx------@ 1 antw  staff  22136 Sep 29  2019 speller
+-rw-r--r--@ 1 antw  staff   5076 Oct  6  2018 speller.c
+-rw-------@ 1 antw  staff  14744 Sep 29  2019 speller.o
+```
