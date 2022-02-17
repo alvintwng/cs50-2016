@@ -11,6 +11,28 @@ int main() {
    return 1; 
 }
 ```
+``` c
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    if (argc != 2)
+    {
+        printf("Usage: ./hello <text>\n");
+        return 1;
+    }
+
+    char* name = argv[1];
+
+    printf("hello, %s\n", name);
+}
+
+// sh-3.2$ vim hello.c
+// sh-3.2$ gcc -g -Wall hello.c -o hello
+// sh-3.2$ ./hello World!
+// hello, World!
+```
+
 ### gcc hello.c
 terminal
 ``` console
@@ -32,3 +54,20 @@ hello, world
 ```
 
 ref: https://tildesites.bowdoin.edu/~ltoma/teaching/cs3225-GIS/fall16/Lectures/basics.html
+
+
+---
+Working software on Mac-mini:
+
+[mymergesort.c](/pset3/hackerfind/mymergesort.c)
+
+also
+
+[mergesort.c](/pset3/hackerfind/mergesort.c)
+``` console
+antw@Mac-mini c % vi mergesort.c
+antw@Mac-mini c % gcc -g -Wall mergesort.c -o mergesort
+antw@Mac-mini c % ./mergesort
+{ 80, 15, 16, 50, 10, 23, 42, 99, }
+{ 10, 15, 15, 16, 23, 42, 50, 99, }
+```
