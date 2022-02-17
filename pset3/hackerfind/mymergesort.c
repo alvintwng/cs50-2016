@@ -9,7 +9,7 @@
  * string name2 = GetString(); printf(" | %s\n", name2);
  */
 
-#include <cs50.h>
+
 #include <stdio.h>
 int Sorting(int values[], int Lo, int Hi);
 void merge (int array[], int start, int LeftHi, int RightLo, int RightHi);
