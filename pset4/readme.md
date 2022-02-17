@@ -9,9 +9,15 @@ antw@Mac-mini c % ./resize
 Usage: ./resize f infile outfile
 antw@Mac-mini c % 
 ```
-whodunit.c
+/ bmp / whodunit.c
 ``` console
 antw@Mac-mini c % gcc -g -Wall whodunit.c -o whodunit
 antw@Mac-mini c % ./whodunit
 Usage: ./whodunit infile outfile
+```
+/ jpg / recover.c
+``` console
+antw@Mac-mini c % gcc -g -Wall recover.c -o recover  
+antw@Mac-mini c % ./recover
+Could not open card.raw.
 ```
