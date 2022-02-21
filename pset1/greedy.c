@@ -1,4 +1,6 @@
-/*greedy.c
+/*  greedy.c
+*  2022 Feb 20, revised to removed cs50.h.
+*
 * quarter ($0.25)
 * dime ($0.10)
 * nicket ($0.05)
@@ -25,7 +27,6 @@
 */
 
 #include <stdio.h>
-#include <cs50.h>
 #include <math.h>
 
 int main(void)
@@ -35,7 +36,7 @@ int main(void)
     do
     {
         printf("O hai! How much change is owed? \n");
-        owed = GetFloat();
+        scanf("%f", &owed);   //  owed = GetFloat();
     }
     while (owed <= 0);
     
@@ -73,10 +74,11 @@ int main(void)
     printf ("%d\n", count);
     
 }
-/*OUTPUT
-~/workspace/pset1 $ ./greedy
+/*  OUTPUT
+~/workspace/pset1 $ 
+antw@Mac-mini c % gcc -g -Wall greedy.c -o greedy
+antw@Mac-mini c % ./greedy
 O hai! How much change is owed? 
 0.41
 4
-~/workspace/pset1 $ 
 */
