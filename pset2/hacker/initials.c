@@ -1,18 +1,19 @@
 /**
  * initials.c
+ * 2022 Feb 20, revised to move cs50 function to here.
+ * 
  * a program that prompts user for their name
  * and then outputs their initials in uppercase with no spaces or periods.
  * Assume that the user's input will contain only letters (uppercase
  * and/or lowercase) plus spaces between words.
- *
- * to check the correctness:
- * check50 2014.fall.hacker2.initials initials.c
  */
 
-#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+
+typedef char* string;   /* from cs50.h */
+string GetString(void); /* prototype */
 
 int main(void)
 {
@@ -39,19 +40,93 @@ int main(void)
             }
         }
         printf("\n");
+    }    
+}
+
+
+#include <limits.h>
+#include <stdlib.h>
+
+/* from cs50.c */
+string GetString(void)
+{
+    // growable buffer for chars
+    string buffer = NULL;
+
+    // capacity of buffer
+    unsigned int capacity = 0;
+
+    // number of chars actually in buffer
+    unsigned int n = 0;
+
+    // character read or EOF
+    int c;
+
+    // iteratively get chars from standard input
+    while ((c = fgetc(stdin)) != '\n' && c != EOF)
+    {
+        // grow buffer if necessary
+        if (n + 1 > capacity)
+        {
+            // determine new capacity: start at 32 then double
+            if (capacity == 0)
+            {
+                capacity = 32;
+            }
+            else if (capacity <= (UINT_MAX / 2))
+            {
+                capacity *= 2;
+            }
+            else
+            {
+                free(buffer);
+                return NULL;
+            }
+
+            // extend buffer's capacity
+            string temp = realloc(buffer, capacity * sizeof(char));
+            if (temp == NULL)
+            {
+                free(buffer);
+                return NULL;
+            }
+            buffer = temp;
+        }
+
+        // append current character to buffer
+        buffer[n++] = c;
     }
+
+    // return NULL if user provided no input
+    if (n == 0 && c == EOF)
+    {
+        return NULL;
+    }
+
+    // minimize buffer
+    string minimal = malloc((n + 1) * sizeof(char));
+    strncpy(minimal, buffer, n);
+    free(buffer);
+
+    // terminate string
+    minimal[n] = '\0';
+
+    // return string
+    return minimal;
 }
 
 /*
-~/workspace/pset2/hacker $ make initials
-clang -ggdb3 -O0 -std=c11 -Wall -Werror -Wshadow    initials.c  -lcs50 -lm -o initials
-~/workspace/pset2/hacker $ ./initials
+antw@Mac-mini c % clang -ggdb3 -O0 -std=c11 -Wall -Werror -Wshadow    initials.c  -lm -o initials
+antw@Mac-mini c % ./initials
 Zamyla Chan
 ZC
-~/workspace/pset2/hacker $ ./initials
+antw@Mac-mini c % ./initials
    robert  thomas bowden
 RTB
-~/workspace/pset2/hacker $ check50 2015.fall.hacker2.initials initials.c
+antw@Mac-mini c % ./initials
+ milo  banana 
+MB
+
 :) initials.c exists
 :) initials.c compiles
 :) outputs "MB" for "Milo Banana"
@@ -62,6 +137,4 @@ RTB
 :) outputs "RTB" for "Robert Thomas Bowden"
 :) outputs "R" for "ROB"
 :) outputs "RTB" for "Robert thomas Bowden"
-https://sandbox.cs50.net/checks/65c0441d51534633bc99ada6ed141f55
-~/workspace/pset2/hacker $ 
 */
