@@ -8,7 +8,7 @@ The on-campus version of CS50x , CS50, is Harvard's largest course.
 ---
 
 **C**  programming exercises
-* pset1 - [mario.c](/hacker/mario.c)
+* pset1 - [mario.c](pset1/hacker/mario.c)
   ``` console
   ./mario
   height: 4
@@ -17,7 +17,12 @@ The on-campus version of CS50x , CS50, is Harvard's largest course.
    ###  ###
   ####  ####
   ```
-* pset2 - caesar.c
+* pset2 - [vigenere.c](/pset2/vigenere.c)
+  ``` console
+  ./vigenere bacon
+  Meet me at the park at eleven am
+  Negh zf av huf pcfx bt gzrwep oz
+  ```
 * pset3 - find.c
 * pset4 - bmp jpeg
 * pset5 - dictionary.c
