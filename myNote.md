@@ -55,6 +55,23 @@ hello, world
 
 ref: https://tildesites.bowdoin.edu/~ltoma/teaching/cs3225-GIS/fall16/Lectures/basics.html
 
+---
+Makefile
+``` Makefile
+#   Makefile
+#   2022 Feb 22
+#
+#
+#
+
+hello: hello.c
+	clang -ggdb3 -O0 -std=c11 -Wall -Werror -o hello hello.c -lm
+
+clean:
+	rm -f *.o a.out core
+
+```
+
 
 ---
 Working software on Mac-mini:
