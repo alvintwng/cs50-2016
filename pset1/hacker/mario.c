@@ -1,11 +1,9 @@
 /** CS50 Problem set wk1
   * mario.c
   * 2015 sep 14, ngtw
-  * tested ok thru:
-  * check50 2014.fall.hacker1.mario mario.c
+  * 2022 Feb 20, revised to removed cs50.h.  
   */
 
-#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
@@ -19,7 +17,7 @@ int main(void)
     do
     {
         printf("height: ");
-        height = GetInt();  
+        scanf("%d", &height);   // was height = GetInt();  
     }
     // height less 1 or n more than 23
     while ( height< 0 || height > 23 );
@@ -59,16 +57,17 @@ int main(void)
         // print new line./mario
         printf("\n");
         }
-    }
-    
-/*OUTPUT
-~/workspace/pset1/hacker $ ./mario
+}
+
+/*  OUTPUT
+antw@Mac-mini c % gcc -g -Wall mario.c -o mario
+antw@Mac-mini c % ./mario
 height: 4
    #  #
   ##  ##
  ###  ###
 ####  ####
-~/workspace/pset1/hacker $ check50 2015.fall.hacker1.mario mario.c
+
 :) mario.c exists
 :) mario.c compiles
 :) rejects a height of -1
@@ -77,8 +76,6 @@ height: 4
 :) handles a height of 2 correctly
 :) handles a height of 23 correctly
 :) rejects a height of 24
-:) rejects a non-numeric height of "foo"
-:) rejects a non-numeric height of ""
-https://sandbox.cs50.net/checks/162babf5111e4463ae3a9d28b47da181
-~/workspace/pset1/hacker $ 
+??? :) rejects a non-numeric height of "foo"
+??? :) rejects a non-numeric height of ""
 */
