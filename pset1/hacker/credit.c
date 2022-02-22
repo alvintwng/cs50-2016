@@ -1,5 +1,7 @@
 /** 
 *credit.c
+* 2022 Feb 23, revised to removed cs50.h
+*
 * Amex 15 digits - start  with 34 or 37
 * Mastercard 16 digits - start with 51,52,53,54 or 55
 * Visa 13 and 16 digits - start with 4
@@ -39,16 +41,9 @@
 * Type of cards.
 *
 * Print its card type
-*
-*
-*
-*
-* check50 2014.fall.hacker1.credit credit.c
-*
 */
 
 #include <stdio.h>
-#include <cs50.h>
 
 int main(void)
 {
@@ -59,13 +54,13 @@ int main(void)
     int dvvalue = 0;
     int tsum = 0;
     int xdvvalue;
-    string cardtype;
+    char* cardtype;
     int lastzero;
 
     
 //Get card number, Getlonglong
     printf("Number: ");
-    cardn = GetLongLong();
+    scanf("%lld", &cardn);
 //    printf ("cardn = %lld\n", cardn);
     
 // Card: Amex 15digits, start with 34   
@@ -188,15 +183,18 @@ int main(void)
     }
     
 }
+
 /*OUTPUT
-~/workspace/pset1/hacker $ ./credit
+antw@Mac-mini c % vi credit.c                    
+antw@Mac-mini c % gcc -g -Wall credit.c -o credit
+antw@Mac-mini c % gcc -g -Wall credit.c -o credit
+antw@Mac-mini c % ./credit                       
 Number: 378282246310005
 AMEX
-~/workspace/pset1/hacker $ ./credit
-Number: 
-4012888888881881Retry: 
+antw@Mac-mini c % ./credit
+Number: 4012888888881881
 VISA
-~/workspace/pset1/hacker $ check50 2015.fall.hacker1.credit credit.c
+
 :) credit.c exists
 :) credit.c compiles
 :) identifies 378282246310005 as AMEX
@@ -207,7 +205,5 @@ VISA
 :) identifies 4012888888881881 as VISA
 :) identifies 1234567890 as INVALID
 :) rejects a non-numeric input of "foo"
-:) rejects a non-numeric input of ""
-https://sandbox.cs50.net/checks/1878a6c7e38d4441b8c9404944169bba
-~/workspace/pset1/hacker $ 
+??? :) rejects a non-numeric input of ""
 */
