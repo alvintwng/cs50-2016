@@ -1,4 +1,6 @@
 /* vigenere.c 
+ * 2022 Feb 22, revised to move cs50 function to here.
+ *
  * encrypts messages using Vigenere's cipher
  * 
  * to accept a single command-line argument: keyword, k,
@@ -12,16 +14,14 @@
  *
  * Keyword, k: A or a = 0; ...;  Z or z = 25 
  * jth to k; ith to p; jth of k will advance to next alphabetical of p only.
- * 
- * checking the correstnes:
- * check50 2015.fall.pset2.vigenere vigenere.c
  */
 
-#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
+typedef char* string;   /* from cs50.h */
+string GetString(void); /* prototype */
 
 int main( int argc, string argv[])
 {
@@ -47,8 +47,6 @@ int main( int argc, string argv[])
             }
                 
         } 
-       
-        
 
 
         // get plain text
@@ -93,8 +91,83 @@ int main( int argc, string argv[])
     }
 }
 
+
+
+#include <limits.h>
+#include <stdlib.h>
+
+/* from cs50.c */
+string GetString(void)
+{
+    // growable buffer for chars
+    string buffer = NULL;
+
+    // capacity of buffer
+    unsigned int capacity = 0;
+
+    // number of chars actually in buffer
+    unsigned int n = 0;
+
+    // character read or EOF
+    int c;
+
+    // iteratively get chars from standard input
+    while ((c = fgetc(stdin)) != '\n' && c != EOF)
+    {
+        // grow buffer if necessary
+        if (n + 1 > capacity)
+        {
+            // determine new capacity: start at 32 then double
+            if (capacity == 0)
+            {
+                capacity = 32;
+            }
+            else if (capacity <= (UINT_MAX / 2))
+            {
+                capacity *= 2;
+            }
+            else
+            {
+                free(buffer);
+                return NULL;
+            }
+
+            // extend buffer's capacity
+            string temp = realloc(buffer, capacity * sizeof(char));
+            if (temp == NULL)
+            {
+                free(buffer);
+                return NULL;
+            }
+            buffer = temp;
+        }
+
+        // append current character to buffer
+        buffer[n++] = c;
+    }
+
+    // return NULL if user provided no input
+    if (n == 0 && c == EOF)
+    {
+        return NULL;
+    }
+
+    // minimize buffer
+    string minimal = malloc((n + 1) * sizeof(char));
+    strncpy(minimal, buffer, n);
+    free(buffer);
+
+    // terminate string
+    minimal[n] = '\0';
+
+    // return string
+    return minimal;
+}
+
 /*OUTPUT
-~/workspace/pset2 $ ./vigenere bacon
+antw@Mac-mini c % vi vigenere.c
+antw@Mac-mini c % clang -ggdb3 -O0 -std=c11 -Wall -Werror -Wshadow   vigenere.c  -lm -o vigenere
+antw@Mac-mini c % ./vigenere bacon
 Meet me at the park at eleven am
 Negh zf av huf pcfx bt gzrwep oz
 */
