@@ -20,10 +20,41 @@ At the initial, 'int c = fgetc(fp)', it set c as interger, than to get bytes fro
 
 terminal
 ``` console
+antw@Mac-mini challenge_2019 % rm speller
+remove speller? y
 antw@Mac-mini challenge_2019 % make
-make: `speller' is up to date.
-antw@Mac-mini challenge_2019 % ls -la spe*
--rwx------@ 1 antw  staff  22136 Sep 29  2019 speller
--rw-r--r--@ 1 antw  staff   5076 Oct  6  2018 speller.c
--rw-------@ 1 antw  staff  14744 Sep 29  2019 speller.o
+clang -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -c -o speller.o speller.c
+clang -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -c -o dictionary.o dictionary.c
+clang -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow -o speller speller.o dictionary.o
+antw@Mac-mini challenge_2019 % ls speller*
+speller		speller.c	speller.o
+antw@Mac-mini challenge_2019 % 
+antw@Mac-mini challenge_2019 % ./speller ~/cs50-2017/pset5/dictionaries/large  ~/cs50-2017/pset5/texts/holmes.txt
+...
+...
+WORDS MISSPELLED:     17845
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        1150970
+TIME IN load:         0.07
+TIME IN check:        0.67
+TIME IN size:         0.00
+TIME IN unload:       0.08
+TIME IN TOTAL:        0.82
+antw@Mac-mini challenge_2019 %
+```
+``` console
+antw@Mac-mini challenge_2019 % wc diction*.c  
+
+      81     212    1428 dictionary.1.c
+     431    1906   13818 dictionary.2.c
+     437    1915   13973 dictionary.3.c
+     399    1704   12508 dictionary.c
+     280     719    5559 dictionary_hash.c
+     444    1755   12631 dictionary_trie.1.c
+     449    1743   12593 dictionary_trie.c
+    2521    9954   72510 total
+```
+``` console
+antw@Mac-mini challenge_2019 % diff -u dictionary.c dictionary_trie.c > dict-diff.txt
+antw@Mac-mini challenge_2019 % vi dict-diff.txt
 ```
