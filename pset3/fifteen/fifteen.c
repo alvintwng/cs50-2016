@@ -1,7 +1,7 @@
 /**
  * fifteen.c
+ * 2022 Feb 23, revised to added in cs50.h & Makefile 
  *
- * Computer Science 50
  * Problem Set 3
  *
  * Implements Game of Fifteen (generalized to d x d).
@@ -17,7 +17,7 @@
  
 #define _XOPEN_SOURCE 500
 
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -336,9 +336,16 @@ bool tileswap(int availi, int availj)
 }
 
 /*OUTPUT
-~/workspace/pset3/fifteen $ ./fifteen
+antw@Mac-mini fifteen % vi Makefile
+antw@Mac-mini fifteen % vi fifteen.c
+antw@Mac-mini fifteen % make
+clang -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror   -c -o fifteen.o fifteen.c
+clang -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror   -c -o cs50.o cs50.c
+clang -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror -o fifteen fifteen.o cs50.o 
+antw@Mac-mini fifteen % ./fifteen
 Usage: fifteen d
-~/workspace/pset3/fifteen $ ./fifteen 4
+antw@Mac-mini fifteen % ./fifteen 4
+
 WELCOME TO GAME OF FIFTEEN
 
   15 14 13 12
@@ -350,5 +357,6 @@ WELCOME TO GAME OF FIFTEEN
    3  1  2  _
 
 Tile to move: 
-
+Tile to move: 0
+antw@Mac-mini fifteen % make clean
 */
