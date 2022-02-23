@@ -1,6 +1,7 @@
 /**
  * resize.c
- * dated: 2016 June 02
+ * date revised: 2022 Feb 23,
+ * date created: 2016 June 02
  * 
  * Computer Science 50
  * Problem Set 4
@@ -19,7 +20,6 @@
        
 #include <stdio.h>
 #include <stdlib.h>
-#include <cs50.h>
 
 #include "bmp.h"
 
@@ -143,10 +143,14 @@ int main(int argc, char* argv[])
 }
 
 /*OUTPUT
-~/workspace/pset4/bmp $ ./resize
+antw@Mac-mini c % clang -ggdb3 -O0 -std=c11 -Wall -Werror -Wshadow   resize.c  -lm -o resize 
+antw@Mac-mini c % ./resize
 Usage: ./resize n infile outfile
-~/workspace/pset4/bmp $ ./resize 4 small.bmp large.bmp
-~/workspace/pset4/bmp $ 
+antw@Mac-mini c % ./resize 4 small.bmp large.bmp
+antw@Mac-mini c % ls *.bmp                      
+large.bmp	small.bmp
+antw@Mac-mini c % xxd -c 12 -g 3 -s 54 small.bmp
+antw@Mac-mini c % xxd -c 36 -g 3 -s 54 large.bmp
+antw@Mac-mini c % xxd -c 20 -g 3 -s 54 medium.bmp
+antw@Mac-mini c % man xxd
 */
-
-
