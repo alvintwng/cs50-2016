@@ -1,6 +1,7 @@
 /**
  * whodunit.c
- * dated: 2016 May 30
+ * date revised: 2022 Feb 23
+ * date created: 2016 May 30
  * 
  * 1. Open file
  * 2. Update header info for outfile
@@ -125,9 +126,15 @@ int main(int argc, char* argv[])
     // that's all folks
     return 0;
 }
+
 /*OUTPUT
-~/workspace/pset4/bmp $ make whodunit
-clang -ggdb3 -O0 -std=c11 -Wall -Werror -Wshadow    whodunit.c  -lcs50 -lm -o whodunit
-~/workspace/pset4/bmp $ ./whodunit clue.bmp verdict.bmp
-~/workspace/pset4/bmp $ 
+antw@Mac-mini c % ls *.bmp
+clue.bmp	small.bmp
+antw@Mac-mini bmp % make whodunit
+cc     whodunit.c   -o whodunit
+antw@Mac-mini bmp % man cc
+antw@Mac-mini c % ./whodunit clue.bmp verdict.bmp
+antw@Mac-mini c % ls *.bmp
+clue.bmp	small.bmp	verdict.bmp
+antw@Mac-mini c % 
 */
