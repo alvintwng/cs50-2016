@@ -2,6 +2,8 @@
  * helpers.c
  *
  * Computer Science 50
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile 
+ *
  * Problem Set 3
  *
  * Helper functions for Problem Set 3.
@@ -15,7 +17,7 @@
  * where needle is the value to find in a haystack of values
  */
        
-#include <cs50.h>
+#include "../cs50/cs50.h"
 
 #include "helpers.h"
 
@@ -87,11 +89,12 @@ void sort(int values[], int n)
         
      return;       
 }
-/*OUTPUT
-~/workspace/pset3/find $./generate 1000 50 | ./find 127
 
+/*OUTPUT
+antw@Mac-mini find % ./generate 1000 50 | ./find 127
+...
 
 Found needle in haystack!
 
-~/workspace/pset3/find $
+antw@Mac-mini find % 
 */
