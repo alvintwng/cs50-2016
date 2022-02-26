@@ -1,5 +1,7 @@
 /**
  * helpers.c
+ *
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile
  * Oct 21, 2015
  * Computer Science 50
  * Problem Set 3
@@ -8,7 +10,7 @@
  *      ./generate 1000 50 | ./find 127
  */
        
-#include <cs50.h>
+#include "../cs50/cs50.h"
 
 #include "helpers.h"
 
