@@ -1,5 +1,6 @@
 /***************************************************************************
  * generate.c
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile 
  *
  * Computer Science 50
  * Problem Set 3
@@ -14,7 +15,7 @@
  
 // standard libraries
 #define _XOPEN_SOURCE
-#include <cs50.h>
+#include "../cs50/cs50.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
