@@ -2,6 +2,8 @@
  * find.c
  *
  * Computer Science 50
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile  
+ *
  * Problem Set 3
  *
  * Prompts user for as many as MAX values until EOF is reached, 
@@ -12,7 +14,7 @@
  * where needle is the value to find in a haystack of values
  */
        
-#include <cs50.h>
+#include "../cs50/cs50.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -67,13 +69,14 @@ int main(int argc, string argv[])
         return 1;
     }
 }
+
 /*OUTPUT
-~/workspace/pset3/find $ make
-clang -ggdb3 -O0 -std=c11 -Wall -Werror -o find find.c helpers.c -lcs50 -lm
+antw@Mac-mini find % make
+clang -ggdb3 -O0 -std=c11 -Wall -Werror -o find find.c helpers.c ../cs50/cs50.c -lm
 clang -ggdb3 -O0 -std=c11 -Wall -Werror -o generate generate.c
-~/workspace/pset3/find $ ./find
+antw@Mac-mini find % ./find
 Usage: ./find needle
-~/workspace/pset3/find $ ./find 13
+antw@Mac-mini find % ./find 13
 
 haystack[0] = 20
 
@@ -81,7 +84,7 @@ haystack[1] = (ctrl-d)
 
 Didn't find needle in haystack.
 
-~/workspace/pset3/find $ ./generate 1000 | ./find 42
+antw@Mac-mini find % ./generate 1000 | ./find 42
 ...
 haystack[999] = 
 haystack[1000] = 
