@@ -2,6 +2,7 @@
  * mymergesort.c
  * : sort by split the array to half using recursive
  * : then marge the left and right of array, using void merge()
+ * 2022 Feb 26
  * Oct20, 2015
  * use to test:    
  * printf("LeftLo %i | Md %i || RightLo %i | Hi %i", LeftLo, Md, RightLo, Hi);
@@ -122,8 +123,11 @@ void merge (int array[], int start, int LeftHi, int RightLo, int RightHi)
 }
 
 /*
+
 OUTPUT:
-~/workspace/pset3/hackerfind $ ./mymergesort
+antw@Mac-mini hackerfind % make mymergesort
+cc     mymergesort.c   -o mymergesort
+antw@Mac-mini hackerfind % ./mymergesort
 
   >> merging from array[0] = 22, & from array[5] = 33
  array = :22 :11 :66 :99 :77 :33 :44 :10 :55 :88 
@@ -137,6 +141,8 @@ OUTPUT:
 *merged =:10 :33 :44 :55 :88 
 *merged =:10 :11 :22 :33 :44 :55 :66 :77 :88 :99 
  array = :10 :11 :22 :33 :44 :55 :66 :77 :88 :99 
+antw@Mac-mini hackerfind % 
+
 ~/workspace/pset3/hackerfind $ 
 
 valgrind:
