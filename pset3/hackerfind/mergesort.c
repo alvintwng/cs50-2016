@@ -95,7 +95,10 @@ void sort(int array[], int size)
     }
 }
 /*OUTPUT
-~/workspace/pset3/hackerfind $ ./mergesort
+
+antw@Mac-mini hackerfind % make mergesort
+cc     mergesort.c   -o mergesort
+antw@Mac-mini hackerfind % ./mergesort
 { 80, 15, 16, 50, 10, 23, 42, 99, }
 { 10, 15, 15, 16, 23, 42, 50, 99, }
 
