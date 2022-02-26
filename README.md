@@ -8,7 +8,7 @@ The on-campus version of CS50x , CS50, is Harvard's largest course.
 ---
 
 **C**  programming exercises
-* pset1 - [mario.c](pset1/hacker/mario.c)
+* pset1 - water.c, greedy.c,  [mario.c](pset1/hacker/mario.c)
   ``` console
   ./mario
   height: 4
@@ -17,14 +17,35 @@ The on-campus version of CS50x , CS50, is Harvard's largest course.
    ###  ###
   ####  ####
   ```
-* pset2 - [vigenere.c](/pset2/vigenere.c)
+* pset2 - initial.c, caesar.c,  [vigenere.c](/pset2/vigenere.c), crack.c
   ``` console
   ./vigenere bacon
   Meet me at the park at eleven am
   Negh zf av huf pcfx bt gzrwep oz
   ```
-* pset3 - find.c
-* pset4 - bmp jpeg
+* pset3 - fifteen, [hackerfind/helpers.c](/pset3/hackerfind/helpers.c)
+  ``` c
+  void merge (int array[], int start, int LeftHi, int RightLo, int RightHi)
+  {
+      int LeftLo = start;
+      int tindex = 0;
+      int tmp[RightHi - start];
+
+      if (array == NULL) { return;}
+
+      while ( (LeftLo <= LeftHi) || (RightLo <= RightHi) )
+      {
+  ```
+* pset4 - copy.c,  [resize.c](/pset4/bmp/resize.c),  whodunit.c,  recover.c
+  ``` console
+  antw@Mac-mini c % xxd -c 12 -g 3 -s 54 small.bmp
+  0000036: 00ff00 00ff00 00ff00 000000  ............
+  0000042: 00ff00 ffffff 00ff00 000000  ............
+  000004e: 00ff00 00ff00 00ff00 000000  ............
+  antw@Mac-mini c % ./resize 4 small.bmp large.bmp
+  antw@Mac-mini c % ls *.bmp                      
+  large.bmp	small.bmp
+  ```
 * pset5 - dictionary.c
   ``` console
   ./speller texts/holmes.txt
@@ -39,8 +60,39 @@ The on-campus version of CS50x , CS50, is Harvard's largest course.
   TIME IN TOTAL:        1.02
   ```
 * pset6 - server.c
-* pset7 - **php** html cs50-finance
-* pset8 - **php** html maps and news
-* psexec - **project** [https://youtu.be/fRVdOQHeC7Q](https://youtu.be/fRVdOQHeC7Q)
+  ``` console
+  ~/workspace/pset6 $ ./server public
+  Using /home/ubuntu/workspace/pset6/public for server's root
+  Listening on port 8080
+  GET / HTTP/1.1
+  HTTP/1.1 200 OK
+  GET /cat.jpg HTTP/1.1
+  HTTP/1.1 200 OK
+  ```
+* pset7 - pset7.sql,  [index.php](/pset7/public/index.php),  login.php,  sell.php, buy.php,  setpassword.php 
+  ``` php
+    foreach ($rows as $row)
+    {   $stock = lookup($row["symbol"]);
+        if ($stock !== false)
+        {   $positions[] = [
+                "name" => $stock["name"],
+                "price" => $stock["price"],
+                "shares" => (number_format($row["shares"], 0, '.', ',')),
+                "symbol" => $row["symbol"],
+  ```
+* pset8 - [scripts.js](/pset8/public/js/scripts.js), pset8.sql,  index.html, search.php, article.php
+  ``` js
+  var map;
+  var markers = [];
+  var info = new google.maps.InfoWindow();
+  var country = "us"; //
+
+  $(function() {
+      var styles = [
+          {
+              featureType: "all",
+              elementType: "labels",
+  ```
+* psexec - project [https://youtu.be/fRVdOQHeC7Q](https://youtu.be/fRVdOQHeC7Q)
 
 ---
