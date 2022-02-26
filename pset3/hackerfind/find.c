@@ -1,5 +1,7 @@
 /**
  * find.c
+ *
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile
  * Oct 21, 2015
  * Computer Science 50
  * Problem Set 3
@@ -14,7 +16,7 @@
  * where needle is the value to find in a haystack of values
  */
        
-#include <cs50.h>
+#include "../cs50/cs50.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -75,18 +77,23 @@ int main(int argc, string argv[])
         return 1;
     }
 }
+
 /*OUTPUT
-~/workspace/pset3/hackerfind $ make clean
+antw@Mac-mini hackerfind % make clean
 rm -f *.o a.out core find generate
-~/workspace/pset3/hackerfind $ make
-clang -ggdb3 -O0 -std=c11 -Wall -Werror -o find find.c helpers.c -lcs50 -lm
+antw@Mac-mini hackerfind % make
+clang -ggdb3 -O0 -std=c11 -Wall -Werror -o find find.c helpers.c ../cs50/cs50.c -lm
 clang -ggdb3 -O0 -std=c11 -Wall -Werror -o generate generate.c
-~/workspace/pset3/hackerfind $ ./generate 5000 10 | ./find 12348
+antw@Mac-mini hackerfind % ./generate 5000 10 | ./find 12348
 
 pre mergesort: values[0] = 57596 ... values[4999] = 41803
 Done sorted  : values[0] = 14     ... values[4999] = 65524
 
 Found needle in haystack!
 
-~/workspace/pset3/hackerfind $ 
+antw@Mac-mini hackerfind % 
+antw@Mac-mini hackerfind % ls *.dSYM
+find.dSYM:
+generate.dSYM:
+antw@Mac-mini hackerfind % rm -Rf *.dSYM
 */
