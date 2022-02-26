@@ -1,5 +1,6 @@
 /**
  * generate.c
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile 
  *
  * Computer Science 50
  * Problem Set 3
@@ -14,7 +15,7 @@
  
 #define _XOPEN_SOURCE
 
-#include <cs50.h>
+#include "../cs50/cs50.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -53,13 +54,13 @@ int main(int argc, string argv[])
     // success
     return 0;
 }
+
 /*OUTPUT
-Didn't find needle in haystack.
-
-~/workspace/pset3/find $ ./generate
+antw@Mac-mini find % make generate
+clang -ggdb3 -O0 -std=c11 -Wall -Werror -o generate generate.c
+antw@Mac-mini find % ./generate    
 Usage: generate n [s]
-
-~/workspace/pset3/find $ ./generate 10 0
+antw@Mac-mini find % ./generate 10 0
 11195
 49145
 6315
@@ -70,5 +71,5 @@ Usage: generate n [s]
 24167
 57272
 48830
-~/workspace/pset3/find $ 
+antw@Mac-mini find %
 */
