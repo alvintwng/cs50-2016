@@ -11,6 +11,7 @@ int main() {
    return 1; 
 }
 ```
+hello World!
 ``` c
 #include <stdio.h>
 
@@ -27,10 +28,14 @@ int main(int argc, char *argv[])
     printf("hello, %s\n", name);
 }
 
-// sh-3.2$ vim hello.c
-// sh-3.2$ gcc -g -Wall hello.c -o hello
-// sh-3.2$ ./hello World!
-// hello, World!
+/*
+sh-3.2$ rm hello
+sh-3.2$ vim hello.c
+sh-3.2$ make hello
+cc     hello.c   -o hello
+sh-3.2$ ./hello World!
+hello, World!
+sh-3.2$  */
 ```
 
 ### gcc hello.c
@@ -60,16 +65,12 @@ Makefile
 ``` Makefile
 #   Makefile
 #   2022 Feb 22
-#
-#
-#
 
 hello: hello.c
 	clang -ggdb3 -O0 -std=c11 -Wall -Werror -o hello hello.c -lm
 
 clean:
 	rm -f *.o a.out core
-
 ```
 
 
@@ -83,8 +84,10 @@ also
 [mergesort.c](/pset3/hackerfind/mergesort.c)
 ``` console
 antw@Mac-mini c % vi mergesort.c
-antw@Mac-mini c % gcc -g -Wall mergesort.c -o mergesort
+antw@Mac-mini c % make mergesort
+cc     mergesort.c   -o mergesort
 antw@Mac-mini c % ./mergesort
 { 80, 15, 16, 50, 10, 23, 42, 99, }
 { 10, 15, 15, 16, 23, 42, 50, 99, }
+antw@Mac-mini c % 
 ```
