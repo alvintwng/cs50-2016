@@ -1,6 +1,6 @@
 #
 # Makefile
-# 2022 Feb 23, revised to added in cs50.h
+# 2022 Feb 26, revised to added in cs50 dir
 #
 # Problem Set 3 for fifteen
 #
@@ -16,14 +16,14 @@ CFLAGS = -ggdb3 -O0 -Qunused-arguments -std=c11 -Wall -Werror
 EXE = fifteen
 
 # space-separated list of header files
-HDRS = cs50.h
+HDRS = ../cs50/cs50.h
 
 # space-separated list of libraries, if any,
 # each of which should be prefixed with -l
 LIBS =
 
 # space-separated list of source files
-SRCS = fifteen.c cs50.c
+SRCS = fifteen.c ../cs50/cs50.c
 
 # automatically generated list of object files
 OBJS = $(SRCS:.c=.o)
