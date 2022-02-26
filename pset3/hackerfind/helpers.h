@@ -1,5 +1,7 @@
 /**
  * helpers.h
+ *
+ * 2022 Feb 26, revised to added in cs50 dir & Makefile
  * Oct 21, 2015
  * Computer Science 50
  * Problem Set 3
@@ -7,7 +9,7 @@
  * Helper functions for Problem Set 3.
  */
  
-#include <cs50.h>
+#include "../cs50/cs50.h"
 #include <stdio.h>
 
 /**
