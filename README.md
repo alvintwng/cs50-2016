@@ -92,8 +92,10 @@ Problem sets inspired by real-world domains of biology, cryptography, finance, f
               featureType: "all",
               elementType: "labels",
   ```
-* psexec - project [https://youtu.be/fRVdOQHeC7Q](https://youtu.be/fRVdOQHeC7Q)
+* psexec - project, title: CS50 Property
 
+  [![image](img/220228cs50Psexe.png)](https://youtu.be/fRVdOQHeC7Q)
+  
 ---
 ### Python3
 * [conversion to Python summary](https://github.com/alvintwng/cs50-2019)
