@@ -1,9 +1,8 @@
-# CS50 - 2016
-An entry-level course, CS50x teaches how to think algorithmically and solve problems efficiently. 
+#### CS50 - 2016
+# C programming, & introduction to computer science
 Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, 
-software engineering, and web development. Languages include C, Python, SQL, and JavaScript plus CSS and HTML. 
-Problem sets inspired by real-world domains of biology, cryptography, finance, forensics, and gaming. 
-The on-campus version of CS50x , CS50, is Harvard's largest course. 
+software engineering, and web development. Languages include C, Php, SQL, and JavaScript plus CSS and HTML. 
+Problem sets inspired by real-world domains of biology, cryptography, finance, forensics, and gaming.  
 
 ---
 
@@ -94,5 +93,13 @@ The on-campus version of CS50x , CS50, is Harvard's largest course.
               elementType: "labels",
   ```
 * psexec - project [https://youtu.be/fRVdOQHeC7Q](https://youtu.be/fRVdOQHeC7Q)
+
+---
+### Python3
+* [conversion to Python summary](https://github.com/alvintwng/cs50-2019)
+
+* [`Python3` and `C` differences](https://github.com/alvintwng/cs50-2019/blob/master/cs50%202019%20my%20python.md)
+
+* [mario, credit, crack ...](https://github.com/alvintwng/cs50-2019/blob/master/pset6_%20hello_mario_credit_crack_caesar_vigenere_bleep.py)
 
 ---
