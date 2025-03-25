@@ -1176,6 +1176,7 @@ Apache is not running!
 ~/workspace/pset6 $ ./server public                                                                                            
 Using /home/ubuntu/workspace/pset6/public for server's root
 Listening on port 8080
+    <browser enter `localhost:8080`>
 GET / HTTP/1.1
 HTTP/1.1 200 OK
 GET /cat.jpg HTTP/1.1
